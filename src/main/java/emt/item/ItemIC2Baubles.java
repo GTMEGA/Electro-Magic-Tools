@@ -1,6 +1,7 @@
 package emt.item;
 
 import baubles.api.BaubleType;
+import baubles.api.BaublesApi;
 import baubles.api.IBauble;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,11 +13,13 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import thaumcraft.api.IRunicArmor;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -81,38 +84,38 @@ public class ItemIC2Baubles extends ItemBase implements IBauble, IRunicArmor {
     }
 
     @Override
-    public void onWornTick(ItemStack stack, EntityLivingBase player) {
-        if (!player.worldObj.isRemote) {
-            if (stack != null) {
-                if (stack.getItemDamage() == 0) {
-                    if (player instanceof EntityPlayer) {
-                        int energyLeft = EMTConfigHandler.armorBaubleProduction;
-                        for (int i = 0; i < ((EntityPlayer) player).inventory.armorInventory.length; i++) {
-                            if (energyLeft > 0) {
-                                if ((((EntityPlayer) player).inventory.armorInventory[i] != null) && (((EntityPlayer) player).inventory.armorInventory[i].getItem() instanceof IElectricItem)) {
-                                    double sentPacket = ElectricItem.manager.charge(((EntityPlayer) player).inventory.armorInventory[i], energyLeft, 4, false, false);
-                                    energyLeft -= sentPacket;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            if (stack != null) {
-                if (stack.getItemDamage() == 1) {
-                    if (player instanceof EntityPlayer) {
-                        int energyLeft = EMTConfigHandler.inventoryBaubleProdution;
-                        for (int i = 0; i < ((EntityPlayer) player).inventory.mainInventory.length; i++) {
-                            if (energyLeft > 0) {
-                                if ((((EntityPlayer) player).inventory.mainInventory[i] != null) && (((EntityPlayer) player).inventory.mainInventory[i].getItem() instanceof IElectricItem)) {
-                                    double sentPacket = ElectricItem.manager.charge(((EntityPlayer) player).inventory.mainInventory[i], energyLeft, 4, false, false);
-                                    energyLeft -= sentPacket;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+    public void onWornTick(ItemStack stack, EntityLivingBase entityLivingBase) {
+        if (entityLivingBase.worldObj.isRemote || stack == null || !(entityLivingBase instanceof EntityPlayer))
+            return;
+
+        EntityPlayer player = (EntityPlayer) entityLivingBase;
+
+        int energyLeft;
+        ItemStack[] inventory;
+
+        if (stack.getItemDamage() == 0) { // Armor energy regen
+            energyLeft = EMTConfigHandler.armorBaubleProduction;
+            inventory = player.inventory.armorInventory;
+        } else if (stack.getItemDamage() == 1) { // Inventory energy regen
+            energyLeft = EMTConfigHandler.inventoryBaubleProdution;
+            inventory = player.inventory.mainInventory;
+        } else if (stack.getItemDamage() == 2) { // Bauble energy regen
+            energyLeft = 800000000;
+            IInventory baubleInv = BaublesApi.getBaubles(player);
+            inventory = new ItemStack[baubleInv.getSizeInventory()];
+            for (int i = 0; i < baubleInv.getSizeInventory(); i++)
+                inventory[i] = baubleInv.getStackInSlot(i);
+        } else {
+            return;
+        }
+
+        for (ItemStack itemStack : inventory) {
+            if ((itemStack != null) && (itemStack.getItem() instanceof IElectricItem))
+                energyLeft -= ElectricItem.manager.charge(
+                        itemStack, energyLeft, 4, false, false);
+
+            if (energyLeft <= 0)
+                return;
         }
     }
 
