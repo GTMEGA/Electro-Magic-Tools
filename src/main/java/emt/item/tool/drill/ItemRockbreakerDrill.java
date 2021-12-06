@@ -35,8 +35,8 @@ public class ItemRockbreakerDrill extends ItemThaumiumDrill {
 
     private static final Block[] isEffective = {Blocks.nether_brick, Blocks.netherrack, Blocks.glowstone, Blocks.iron_block, Blocks.gold_block, Blocks.diamond_block, Blocks.lapis_block, Blocks.redstone_block, Blocks.redstone_ore, Blocks.emerald_ore, Blocks.emerald_block, Blocks.stonebrick, Blocks.glass, Blocks.stone, Blocks.gold_ore, Blocks.iron_ore, Blocks.coal_ore, Blocks.cobblestone,
             Blocks.diamond_ore, Blocks.lapis_ore, Blocks.dirt, Blocks.gravel, Blocks.sand, Blocks.sandstone, Blocks.soul_sand, Blocks.clay, Blocks.grass, Blocks.snow_layer, Blocks.snow, Blocks.farmland, Blocks.hardened_clay, Blocks.stained_hardened_clay, Blocks.mossy_cobblestone};
-    public int searchCost = 1000;
-    public int hitCost = 400;
+    public int searchCost = 500;
+    public int hitCost = 200;
     int side;
 
     public ItemRockbreakerDrill() {
@@ -51,7 +51,7 @@ public class ItemRockbreakerDrill extends ItemThaumiumDrill {
         }
         maxCharge = 1000000;
         transferLimit = 1000;
-        tier = 3;
+        tier = 2;
     }
 
     @SideOnly(Side.CLIENT)

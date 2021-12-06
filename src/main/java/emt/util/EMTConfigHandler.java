@@ -184,20 +184,20 @@ public class EMTConfigHandler {
         septupleCompressedSolarOutput = config.get(VALUES, "Septouple Compressed Solar Panel Output", 10000000, "This is the number you have to modify if you want to make the Septouple Compressed Solar Panel " + "yield more or less EU per tick. Really, you shouldn't touch that, " + "since it's pretty balanced as it is.").getDouble(septupleCompressedSolarOutput);
         octupleCompressedSolarOutput = config.get(VALUES, "Octtouple Compressed Solar Panel Output", 100000000, "This is the number you have to modify if you want to make the Octtouple Compressed Solar Panel " + "yield more or less EU per tick. Really, you shouldn't touch that, " + "since it's pretty balanced as it is.").getDouble(octupleCompressedSolarOutput);
 
-        nanoBootsSpeed = config.get(VALUES, "Nano Boots of the Traveller Speed", 0.25, "Watch out, that goes up REALLY quickly.").getDouble(nanoBootsSpeed);
-        quantumBootsSpeed = config.get(VALUES, "Quantum Boots of the Traveller Speed", 0.5, "Watch out, that goes up REALLY quickly.").getDouble(quantumBootsSpeed);
-        nanoBootsJump = config.get(VALUES, "Nano Boots of the Traveller jump", 0.6, "Watch out, that goes up REALLY quickly.").getDouble(nanoBootsJump);
-        quantumBootsJump = config.get(VALUES, "Quantum Boots of the Traveller jump", 0.9, "Watch out, that goes up REALLY quickly.").getDouble(nanoBootsJump);
+        nanoBootsSpeed = config.get(VALUES, "Nano Boots of the Traveller Speed", 0.2, "Watch out, that goes up REALLY quickly.").getDouble(nanoBootsSpeed);
+        quantumBootsSpeed = config.get(VALUES, "Quantum Boots of the Traveller Speed", 0.35, "Watch out, that goes up REALLY quickly.").getDouble(quantumBootsSpeed);
+        nanoBootsJump = config.get(VALUES, "Nano Boots of the Traveller jump", 0.3, "Watch out, that goes up REALLY quickly.").getDouble(nanoBootsJump);
+        quantumBootsJump = config.get(VALUES, "Quantum Boots of the Traveller jump", 0.5, "Watch out, that goes up REALLY quickly.").getDouble(nanoBootsJump);
         etherealProcessorBaseSpeed = config.get(VALUES, "Etheral Processor speed", 400, "Default is 400, the double of a regular furnace").getInt();
         etherealProcessorBonus = config.get(VALUES, "Ethereal Processor Bonus", 10, "This number is the chance of getting a Thaumium Ingot as a bonus when " + "processing an item in the machine. It is 1 out of the number you will enter. " + "The default is 1/10 chance.").getInt();
         chargeFocusProduction = config.get(VALUES, "Wand Focus: Charge production", 64, "Default is 64").getInt();
-        armorBaubleProduction = config.get(VALUES, "Armor Charging Ring production", 32, "Default is 32").getInt();
+        armorBaubleProduction = config.get(VALUES, "Armor Charging Ring production", 512, "Default is 32").getInt();
         inventoryBaubleProdution = config.get(VALUES, "Inventory Charging Ring production", 32, "Default is 32").getInt();
         wandChargeFocusCost = config.get(VALUES, "Wand Focus: Wand Charging Cost", 40000, "Default is 40000").getInt();
 
-        nanoBootsMinDrop = config.get(VALUES, "Nano Boots of the Traveller minimum drop", 6.0, "The distance allowed to fall without any damage").getDouble(nanoBootsMinDrop);
+        nanoBootsMinDrop = config.get(VALUES, "Nano Boots of the Traveller minimum drop", 8.0, "The distance allowed to fall without any damage").getDouble(nanoBootsMinDrop);
         nanoBootsMaxDrop = config.get(VALUES, "Nano Boots of the Traveller maximum healthy drop", 35.0, "Energy amount drained will tripled if player drops more than this amount of blocks").getDouble(nanoBootsMaxDrop);
-        quantumBootsMinDrop = config.get(VALUES, "Quantum Boots of the Traveller minimum drop", 10.0, "The distance allowed to fall without any damage").getDouble(quantumBootsMinDrop);
+        quantumBootsMinDrop = config.get(VALUES, "Quantum Boots of the Traveller minimum drop", 16.0, "The distance allowed to fall without any damage").getDouble(quantumBootsMinDrop);
         quantumBootsMaxDrop = config.get(VALUES, "Quantum Boots of the Traveller maximum healthy drop", 100.0, "Energy amount drained will tripled if player drops more than this amount of blocks").getDouble(quantumBootsMaxDrop);
 
         thaumiumDrillResearch = config.get(RESEARCH, "Thaumium Drill", false).getBoolean(thaumiumDrillResearch);

@@ -22,7 +22,7 @@ public class ItemThaumiumDrill extends ItemPickaxe implements IElectricItem {
 
     public int maxCharge = 100000;
     public int cost;
-    public int tier = 2;
+    public int tier = 1;
     public double transferLimit = 100;
 
     public ItemThaumiumDrill() {
