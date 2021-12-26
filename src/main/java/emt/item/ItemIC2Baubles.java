@@ -90,7 +90,7 @@ public class ItemIC2Baubles extends ItemBase implements IBauble, IRunicArmor {
                         for (int i = 0; i < ((EntityPlayer) player).inventory.armorInventory.length; i++) {
                             if (energyLeft > 0) {
                                 if ((((EntityPlayer) player).inventory.armorInventory[i] != null) && (((EntityPlayer) player).inventory.armorInventory[i].getItem() instanceof IElectricItem)) {
-                                    double sentPacket = ElectricItem.manager.charge(((EntityPlayer) player).inventory.armorInventory[i], energyLeft, 4, false, false);
+                                    double sentPacket = ElectricItem.manager.charge(((EntityPlayer) player).inventory.armorInventory[i], energyLeft, 4, true, false);
                                     energyLeft -= sentPacket;
                                 }
                             }

@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class ItemThaumiumChainsaw extends ItemDiamondChainsaw {
 
     public ItemThaumiumChainsaw() {
-        this.efficiencyOnProperMaterial = 21F;
+        this.efficiencyOnProperMaterial = 32F;
         this.setCreativeTab(EMT.TAB);
         this.setMaxDamage(27);
         this.setMaxStackSize(1);

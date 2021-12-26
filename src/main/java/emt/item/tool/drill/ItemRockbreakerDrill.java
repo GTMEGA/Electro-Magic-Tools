@@ -42,7 +42,7 @@ public class ItemRockbreakerDrill extends ItemThaumiumDrill {
     public ItemRockbreakerDrill() {
         side = 0;
         setCreativeTab(EMT.TAB);
-        this.efficiencyOnProperMaterial = 25F;
+        this.efficiencyOnProperMaterial = 30F;
         this.setMaxStackSize(1);
         if (EMTConfigHandler.toolsInBore == false) {
             this.setMaxDamage(27);

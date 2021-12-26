@@ -153,7 +153,7 @@ public class EMTConfigHandler {
         capesOn = config.get(RANDOM, "Enable capes", true, "This config option is to enable or disable capes for people who have them. " + "Seriously, you shouldn't touch that unless you have another cape and " + "it conflicts with it.").getBoolean(capesOn);
         toolsInBore = config.get(RANDOM, "Tools for Arcane Bore", false, "This will augment the durablilty of the tools, and will also decrease the EU cost to 1. " + "The tools should have the same number of uses than before.").getBoolean(toolsInBore);
         nightVisionOff = config.get(RANDOM, "Disable nightvision helmets", false, "This was added because of mods making you totally blind if using nightvision. For example, enable that when in the Deep Dark.").getBoolean(nightVisionOff);
-        enchanting = config.get(RANDOM, "Enable enchanting tools", false, "Warning: the enchantability is low.").getBoolean(enchanting);
+        enchanting = config.get(RANDOM, "Enable enchanting tools", true, "Warning: the enchantability is low.").getBoolean(enchanting);
         smoke = config.get(RANDOM, "Disable smoke effect for boots", false, "This effect only appears when the player isn't on the ground").getBoolean(smoke);
         oneRingSpawn = config.get(RANDOM, "Disable One Ring in dungeon chests", true, "There is a recipe to get this item.").getBoolean(oneRingSpawn);
         chanceTaintedMjolnir = config.get(RANDOM, "Tainted Mjolnir spawning change", 25, "If you have a lot of mods adding dungeon loot, you should definetely increase this").getInt();

@@ -27,7 +27,7 @@ public class ItemThaumiumDrill extends ItemPickaxe implements IElectricItem {
 
     public ItemThaumiumDrill() {
         super(ToolMaterial.EMERALD);
-        this.efficiencyOnProperMaterial = 20F;
+        this.efficiencyOnProperMaterial = 25F;
         this.setCreativeTab(EMT.TAB);
         this.setMaxStackSize(1);
         if (EMTConfigHandler.toolsInBore == false) {
