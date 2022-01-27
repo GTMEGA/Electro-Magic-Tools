@@ -39,11 +39,11 @@ public class ItemDiamondChainsaw extends ItemAxe implements IElectricItem {
     public int maxCharge = 50000;
     public int cost = 200;
     public int hitCost = 300;
-    public int tier = 2;
+    public int tier = 1;
 
     public ItemDiamondChainsaw() {
         super(ToolMaterial.EMERALD);
-        this.efficiencyOnProperMaterial = 16F;
+        this.efficiencyOnProperMaterial = 22F;
         this.setCreativeTab(EMT.TAB);
         this.setMaxDamage(27);
         this.setMaxStackSize(1);

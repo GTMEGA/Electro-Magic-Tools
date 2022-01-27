@@ -22,12 +22,12 @@ public class ItemThaumiumDrill extends ItemPickaxe implements IElectricItem {
 
     public int maxCharge = 100000;
     public int cost;
-    public int tier = 2;
+    public int tier = 1;
     public double transferLimit = 100;
 
     public ItemThaumiumDrill() {
         super(ToolMaterial.EMERALD);
-        this.efficiencyOnProperMaterial = 20F;
+        this.efficiencyOnProperMaterial = 25F;
         this.setCreativeTab(EMT.TAB);
         this.setMaxStackSize(1);
         if (EMTConfigHandler.toolsInBore == false) {

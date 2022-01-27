@@ -26,7 +26,7 @@ public class ItemStreamChainsaw extends ItemThaumiumChainsaw {
     boolean alternateClient;
 
     public ItemStreamChainsaw() {
-        this.efficiencyOnProperMaterial = 25F;
+        this.efficiencyOnProperMaterial = 40F;
         alternateServer = false;
         alternateClient = false;
         setCreativeTab(EMT.TAB);
@@ -35,7 +35,7 @@ public class ItemStreamChainsaw extends ItemThaumiumChainsaw {
         maxCharge = 1000000;
         cost = 400;
         hitCost = 500;
-        tier = 3;
+        tier = 1;
     }
 
     @SideOnly(Side.CLIENT)
